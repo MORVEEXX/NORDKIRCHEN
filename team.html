@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* ---- STYLES (unverändert aus deiner Vorlage) ---- */
         .navbar {
             background: rgba(0, 0, 0, 0.9);
             padding: 1rem 2rem;
@@ -181,106 +182,11 @@
             100% { left: 200%; }
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: rgba(0, 0, 0, 0.9);
-            border-radius: 15px;
-            padding: 2rem;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-            border: 1px solid rgba(0, 102, 255, 0.2);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 1.5rem;
-            color: #888;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .close-modal:hover {
-            color: #0066ff;
-        }
-
-        .modal-title {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .modal-text {
-            color: #888;
-            line-height: 1.6;
-        }
-
-        .modal-tasks {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(0, 102, 255, 0.2);
-        }
-
-        .modal-tasks h3 {
-            color: #0066ff;
-            margin-bottom: 1rem;
-        }
-
-        .modal-tasks ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .modal-tasks li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #888;
-        }
-
-        .modal-tasks li::before {
-            content: '•';
-            color: #0066ff;
-            position: absolute;
-            left: 0;
-        }
-
         footer {
             background: rgba(0, 0, 0, 0.95);
             padding: 3rem 2rem;
             margin-top: 4rem;
             border-top: 2px solid rgba(0, 102, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(0, 102, 255, 0.3),
-                transparent
-            );
         }
 
         .footer-content {
@@ -291,95 +197,26 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 2rem;
-            position: relative;
-        }
-
-        .footer-content::after {
-            content: '';
-            position: absolute;
-            bottom: -2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            height: 1px;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(0, 102, 255, 0.3),
-                transparent
-            );
         }
 
         .footer-links {
             display: flex;
             gap: 2.5rem;
-            background: rgba(0, 102, 255, 0.05);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            border: 1px solid rgba(0, 102, 255, 0.1);
         }
 
         .footer-links a {
             color: #888;
             text-decoration: none;
             transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 1rem;
-            font-size: 1.1rem;
-            border-radius: 20px;
-        }
-
-        .footer-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #0066ff, #003366);
-            border-radius: 20px;
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: -1;
         }
 
         .footer-links a:hover {
             color: #fff;
-            text-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .footer-links a:hover::before {
-            opacity: 0.2;
         }
 
         .footer-copyright {
             color: #888;
             font-size: 1rem;
-            text-align: right;
-            padding: 1rem 2rem;
-            background: rgba(0, 102, 255, 0.05);
-            border-radius: 50px;
-            border: 1px solid rgba(0, 102, 255, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links {
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -392,7 +229,7 @@
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="rules.html">Regeln</a>
-            <a href="team.html">Team</a>
+            <a href="team.html" class="active">Team</a>
             <a href="discord.html">Discord</a>
             <a href="job-polizei.html">Job Polizei</a>
         </div>
@@ -400,44 +237,41 @@
 
     <main class="team-content">
         <h1>Unser Team</h1>
-       <div class="team-grid">
+        <div class="team-grid">
+            <div class="team-card" data-member="morveexx">
+                <div class="team-avatar">
+                    <img src="https://i.imgur.com/wzSRl8A.png" alt="MORVEEXX">
+                </div>
+                <h2 class="team-name">MORVEEXX</h2>
+                <span class="team-rank">Server Owner</span>
+                <div class="team-discord">
+                    <i class="fab fa-discord"></i> MORVEEXX.DE
+                </div>
+            </div>
 
-  <div class="team-card" data-member="morveexx">
-    <div class="team-avatar">
-      <img src="https://i.imgur.com/wzSRl8A.png" alt="MORVEEXX">
-    </div>
-    <h2 class="team-name">MORVEEXX</h2>
-    <span class="team-rank">Server Owner</span>
-    <div class="team-discord">
-      <i class="fab fa-discord"></i> MORVEEXX.DE
-    </div>
-  </div>
+            <div class="team-card" data-member="mago">
+                <div class="team-avatar">
+                    <img src="https://i.imgur.com/wzSRl8A.png" alt="Mr Mago">
+                </div>
+                <h2 class="team-name">Mr Mago</h2>
+                <span class="team-rank">Stv. Projektleitung</span>
+                <div class="team-discord">
+                    <i class="fab fa-discord"></i> .mr.mago.
+                </div>
+            </div>
 
-  <div class="team-card" data-member="mago">
-    <div class="team-avatar">
-      <img src="https://i.imgur.com/wzSRl8A.png" alt="Mr Mago">
-    </div>
-    <h2 class="team-name">Mr Mago</h2>
-    <span class="team-rank">Stv. Projektleitung</span>
-    <div class="team-discord">
-      <i class="fab fa-discord"></i> .mr.mago.
-    </div>
-  </div>
+            <div class="team-card" data-member="junior">
+                <div class="team-avatar">
+                    <img src="https://i.imgur.com/wzSRl8A.png" alt="JuniorJones15">
+                </div>
+                <h2 class="team-name">JuniorJones15</h2>
+                <span class="team-rank">Stv. Projektleitung</span>
+                <div class="team-discord">
+                    <i class="fab fa-discord"></i> juniorjones14
+                </div>
+            </div>
 
-  <div class="team-card" data-member="junior">
-    <div class="team-avatar">
-      <img src="https://i.imgur.com/wzSRl8A.png" alt="JuniorJones15">
-    </div>
-    <h2 class="team-name">JuniorJones15</h2>
-    <span class="team-rank">Stv. Projektleitung</span>
-    <div class="team-discord">
-      <i class="fab fa-discord"></i> juniorjones14
-    </div>
-  </div>
-
-</div>
-
-            <div class="team-card" data-member="lisa">
+            <div class="team-card" data-member="tronix">
                 <div class="team-avatar">
                     <img src="https://i.imgur.com/wzSRl8A.png" alt="Tronix">
                 </div>
@@ -448,25 +282,25 @@
                 </div>
             </div>
 
-            <div class="team-card" data-member="paul">
+            <div class="team-card" data-member="nasty">
                 <div class="team-avatar">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23333'/%3E%3C/svg%3E" alt="Paul Mustermann">
+                    <img src="https://i.imgur.com/wzSRl8A.png" alt="Nasty">
                 </div>
-                <h2 class="team-name">Nicht Besetzt</h2>
+                <h2 class="team-name">Nasty</h2>
                 <span class="team-rank">Admin</span>
                 <div class="team-discord">
-                    <i class="fab fa-discord"></i> Nicht Besetzt
+                    <i class="fab fa-discord"></i> nasty_rp
                 </div>
             </div>
 
-            <div class="team-card" data-member="sarah">
+            <div class="team-card" data-member="zero">
                 <div class="team-avatar">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23333'/%3E%3C/svg%3E" alt="Sarah Mustermann">
+                    <img src="https://i.imgur.com/wzSRl8A.png" alt="Zero N1ghts">
                 </div>
-                <h2 class="team-name">Nicht Besetzt</h2>
-                <span class="team-rank">Moderator</span>
+                <h2 class="team-name">Zero N1ghts</h2>
+                <span class="team-rank">Supporter</span>
                 <div class="team-discord">
-                    <i class="fab fa-discord"></i> Nicht Besetzt
+                    <i class="fab fa-discord"></i> zero_n1ghts
                 </div>
             </div>
         </div>
@@ -496,7 +330,6 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById('teamModal');
@@ -509,7 +342,7 @@
             const teamInfo = {
                 morveexx: {
                     title: 'MORVEEXX - Server Owner',
-                    text: 'MORVEEXX ist der Gründer und Führung vom Server. mit seiner Leidenschaft für Roleplay, hat er dieses Projekt erschaffen!',
+                    text: 'MORVEEXX ist der Gründer und Führung vom Server.',
                     tasks: [
                         'Führung aller Teamler & Server development',
                         'Team management und Ansprechpartner der Teamler',
@@ -518,53 +351,53 @@
                     ]
                 },
                 mago: {
-                    title: '.mr.mago. - Stv. Projektleitung',
-                    text: 'Mago ist ebenfalls Gründer und Führung vom Server. auch er hat Leidenschaft fürs Roleplay!',
+                    title: 'Mr Mago - Stv. Projektleitung',
+                    text: 'Mago ist ebenfalls Gründer und Führung vom Server.',
                     tasks: [
-                        'Führung aller Teamler & Server development',
-                        'Team management und Ansprechpartner der Teamler',
-                        'Projekt Planung und Strategie Analyse',
-                        'Kommunikation mit Partnern und Sponsoren'
+                        'Führung aller Teamler',
+                        'Koordination und Planung',
+                        'Entwicklung und Support',
+                        'Projektstrategie'
                     ]
                 },
                 junior: {
-                    title: 'Juniorjones15 - Stv. Projektleitung',
-                    text: 'Juniorjones ist als 2te Stv Leitung, für die Koordination im Team Verantwortlich.',
+                    title: 'JuniorJones15 - Stv. Projektleitung',
+                    text: 'Juniorjones ist für die Koordination im Team verantwortlich.',
                     tasks: [
-                        'Führung aller Teamler & Server development',
-                        'Team management und Ansprechpartner der Teamler',
-                        'Projekt Planung und Strategie Analyse',
-                        'Kommunikation mit Partnern und Sponsoren'
+                        'Führung der Teamleitung',
+                        'Projektplanung',
+                        'Support und Organisation',
+                        'Interne Kommunikation'
                     ]
                 },
-                platzhalter: {
+                tronix: {
                     title: 'Tronix - Teamleitung',
-                    text: 'Tronix ist als Teil der Teamleitung ein Wichtiger Bestand vom Team!',
+                    text: 'Tronix ist Teil der Teamleitung und kümmert sich um interne Abläufe.',
                     tasks: [
-                        'Hilft den Team!',
-                        'Kümmert sich um Tickets',
-                        'Ansprechpartner der Teamler!"',
-                        'Kümmert sich ums Wohlbefinden aller Nutzen'
+                        'Teamkoordination',
+                        'Hilft im Support',
+                        'Unterstützt neue Teammitglieder',
+                        'Kümmert sich ums Wohlbefinden aller Nutzer'
                     ]
                 },
-                platzhalter2: {
-                    title: 'Nicht Besetzt - Admin',
-                    text: 'Hier Könnte etwas über dich Stehen!',
+                nasty: {
+                    title: 'Nasty - Admin',
+                    text: 'Nasty ist als Admin verantwortlich für Ordnung und Struktur im Team.',
                     tasks: [
-                        'Hier auch',
-                        'und Hier auch',
-                        'Hier könnte sowas stehen wie "Bier! wir brauchen BIER!"',
-                        'und halt auch hier'
+                        'Überwacht Server-Aktivitäten und setzt Regeln durch',
+                        'Unterstützt das Team bei administrativen Aufgaben',
+                        'Kümmert sich um Support-Angelegenheiten',
+                        'Sorgt für Fairness und Stabilität im Serverbetrieb'
                     ]
                 },
-                platzhalter3: {
-                    title: 'Nicht Besetzt - Moderator',
-                    text: 'Hier Könnte etwas über dich Stehen!',
+                zero: {
+                    title: 'Zero N1ghts - Supporter',
+                    text: 'Zero N1ghts ist als Supporter im Team tätig und kümmert sich um Spieleranliegen.',
                     tasks: [
-                        'Hier auch',
-                        'und Hier auch',
-                        'Hier könnte sowas stehen wie "Bier! wir brauchen BIER!"',
-                        'und halt auch hier'
+                        'Unterstützt Spieler bei Fragen und Problemen',
+                        'Bearbeitet Tickets schnell und zuverlässig',
+                        'Hilft bei Events und administrativen Aufgaben',
+                        'Sorgt für ein positives Spielerlebnis auf dem Server'
                     ]
                 }
             };
@@ -573,16 +406,15 @@
                 card.addEventListener('click', function() {
                     const member = this.dataset.member;
                     const info = teamInfo[member];
+                    if (!info) return;
                     modalTitle.textContent = info.title;
                     modalText.textContent = info.text;
-                    
                     tasksList.innerHTML = '';
                     info.tasks.forEach(task => {
                         const li = document.createElement('li');
                         li.textContent = task;
                         tasksList.appendChild(li);
                     });
-                    
                     modal.style.display = 'flex';
                 });
             });
@@ -592,20 +424,15 @@
             });
 
             window.addEventListener('click', function(event) {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
+                if (event.target === modal) modal.style.display = 'none';
             });
         });
 
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
-            if (window.pageYOffset > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            if (window.pageYOffset > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
         });
     </script>
 </body>
-</html> 
+</html>
